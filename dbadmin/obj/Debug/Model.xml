@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="dbadmin.dll" />
-			<Metadata Name="FileName" Value="C:\GIT\W0570\SQL\SQLSERVER\DBADMIN\OBJ\DEBUG\DBADMIN.DLL" />
+			<Metadata Name="FileName" Value="C:\GIT\W0570\SQLSERVER\DBADMIN\OBJ\DEBUG\DBADMIN.DLL" />
 			<Metadata Name="AssemblyName" Value="dbadmin" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\GIT\w0570\SQL\sqlserver\dbadmin\obj\Debug\dbadmin.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\dbadmin.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

@@ -10,6 +10,9 @@ C:\GIT\w0570\SQL\sqlserver\dbadmin\bin\Debug\dbadmin.pdb
 C:\GIT\w0570\SQLServer\dbadmin\bin\Debug\dbadmin.dacpac
 C:\GIT\w0570\SQLServer\dbadmin\bin\Debug\dbadmin.dll
 C:\GIT\w0570\SQLServer\dbadmin\bin\Debug\dbadmin.pdb
-C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\dbadmin.sqlprojAssemblyReference.cache
 C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\dbadmin.dll
 C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\dbadmin.pdb
+C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\Model.xml
+C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\refactor.xml
+C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\postdeploy.sql
+C:\GIT\w0570\SQLServer\dbadmin\obj\Debug\predeploy.sql
