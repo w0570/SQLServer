@@ -1,0 +1,1988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="dbadmin.dll" />
+			<Metadata Name="FileName" Value="C:\GIT\W0570\SQL\SQLSERVER\DBADMIN\OBJ\DEBUG\DBADMIN.DLL" />
+			<Metadata Name="AssemblyName" Value="dbadmin" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\GIT\w0570\SQL\sqlserver\dbadmin\obj\Debug\dbadmin.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_sp_Who_Monitor2_IsEmail]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[((0))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[IsEmail]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[fn_getCompanyName]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN 
+	DECLARE @companyname as varchar(255)
+
+    RETURN @companyname
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="CreateOffset" Value="267" />
+							<Property Name="Length" Value="478" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="-- =============================================  &#xD;&#xA;-- Author: Billie Lepasana&#xD;&#xA;-- Create Date: 2011-11-24 -- (Its fall, mild chill, US Thanksgiving)&#xD;&#xA;-- Description: Get Company Name based from a stored proc call&#xD;&#xA;-- =============================================  &#xD;&#xA;CREATE FUNCTION [dbo].[fn_getCompanyName]&#xD;&#xA;(&#xD;&#xA;&#x9;@param1 as nvarchar(max) -- stored proc call with parameters&#xD;&#xA;)&#xD;&#xA;RETURNS varchar(255)" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[fn_getCompanyName].[@param1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="255" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_sp_Who_Monitor2]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[sp_Who_Monitor2].[LogID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[sp_Who_Monitor2]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[LogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[spid]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[DBName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="128" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[Host]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="128" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[Login]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="128" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[EventInfo]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[ObjectName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="257" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[CompanyName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[ElapsedMIN]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="3" />
+									<Property Name="Precision" Value="12" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[ElapsedMS]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[CPUTime]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[IOReads]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[IOWrites]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[LastWaitType]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="60" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[BlkBy]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[CommandType]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="16" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[StartTime]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[ClientAddress]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="48" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[Status]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[sp_Who_Monitor2].[IsEmail]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="3" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Tools_KillConnection]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+    DECLARE @spid int
+    DECLARE @sql varchar(MAX)
+
+    DECLARE cur CURSOR FOR
+        SELECT spid FROM sys.sysprocesses P
+            JOIN sys.sysdatabases D ON (D.dbid = P.dbid)
+            JOIN sys.sysusers U ON (P.uid = U.uid)
+            AND P.spid != @@SPID
+
+    OPEN cur
+
+    FETCH NEXT FROM cur
+        INTO @spid
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        PRINT CONVERT(varchar, @spid)
+
+        SET @sql = 'KILL ' + RTRIM(@spid)
+        PRINT @sql
+        EXEC(@sql)
+
+        FETCH NEXT FROM cur
+            INTO @spid
+    END
+
+    CLOSE cur
+    DEALLOCATE cur]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="653" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[Tools_KillConnection]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Tools_Sp_Who_Monitor2]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+SET NOCOUNT ON;
+SET XACT_Abort ON;
+
+IF @IsDisplay = 1
+BEGIN
+ PRINT ''
+ PRINT REPLICATE('=',50)
+ PRINT 'Start Processing ' + CONVERT(VarChar(20), GETDATE(), 109)
+ PRINT REPLICATE('-',25)
+ PRINT 'Server Name : ' + @@ServerName 
+ PRINT 'DB: ' + DB_name()
+ PRINT REPLICATE('-',25)
+ PRINT ''
+END
+
+BEGIN TRY		
+	DECLARE 
+		-----------------------------
+		-- Error Logging
+        @Proc	NVARCHAR(75) = 'Tools_Sp_Who2'
+--///////////////////////////////
+-- Variables
+	   ,@dateTimeEnd DATETIME
+
+--///////////////////////////////
+-- Initialized
+
+
+
+--///////////////////////////////
+-- BEGIN Process
+		if (object_id('tempdb..#spWho') is not null)
+			drop table #spWho
+
+		SELECT 			SPID                = er.session_id  
+			,@@SERVERNAME ServerName
+			,Status             = ses.status  
+			,[Login]            = ses.login_name  
+			,Host               = ses.host_name  
+			,BlkBy              = er.blocking_session_id  
+			,DBName             = DB_Name(er.database_id)  
+			,CommandType        = er.command  
+			,SQLStatement       =  
+				SUBSTRING 
+				(  
+					qt.text,  
+					er.statement_start_offset/2,  
+					(CASE WHEN er.statement_end_offset = -1  
+						THEN LEN(CONVERT(nvarchar(MAX), qt.text)) * 2  
+						ELSE er.statement_end_offset  
+						END - er.statement_start_offset)/2  
+				)  
+			,ObjectName         = OBJECT_SCHEMA_NAME(qt.objectid,dbid) + '.' + OBJECT_NAME(qt.objectid, qt.dbid)  
+			,ElapsedMS          = er.total_elapsed_time  
+			,CPUTime            = er.cpu_time  
+			,IOReads            = er.logical_reads + er.reads  
+			,IOWrites           = er.writes  
+			,LastWaitType       = er.last_wait_type  
+			,StartTime          = er.start_time  
+			,Protocol           = con.net_transport  
+			,transaction_isolation =  
+				CASE ses.transaction_isolation_level  
+					WHEN 0 THEN 'Unspecified' 
+					WHEN 1 THEN 'Read Uncommitted' 
+					WHEN 2 THEN 'Read Committed' 
+					WHEN 3 THEN 'Repeatable' 
+					WHEN 4 THEN 'Serializable' 
+					WHEN 5 THEN 'Snapshot' 
+				END 
+			,ConnectionWrites   = con.num_writes  
+			,ConnectionReads    = con.num_reads  
+			,ClientAddress      = con.client_net_address  
+			,Authentication     = con.auth_scheme  
+		---------------------------
+		INTO #spWho 
+		---------------------------
+			FROM sys.dm_exec_requests er  
+				LEFT JOIN sys.dm_exec_sessions ses  ON ses.session_id = er.session_id  
+				LEFT JOIN sys.dm_exec_connections con  ON con.session_id = ses.session_id  
+				OUTER APPLY sys.dm_exec_sql_text(er.sql_handle) as qt  
+
+		WHERE ses.status   = 'running'
+			ORDER BY 
+			CPUTime desc,
+			IOReads DESC
+
+	--------------------------------------------------------------------------------------
+	-- Query 01
+	--SELECT *  FROM #spWho 
+	--	ORDER BY ElapsedMS desc
+	--------------------------------------------------------------------------------------
+	DECLARE 
+	     @ExecSql varchar(max)
+   
+	if (object_id('tempdb..#InpbufTmp') is not null)
+		drop table #InpbufTmp
+
+
+	CREATE TABLE #InpbufTmp(
+	EventType NVARCHAR(MAX) NULL,
+	Parameters INT NULL,
+	EventInfo NVARCHAR(MAX) NULL
+	)
+
+	if (object_id('tempdb..#Inpbuffer') is not null)
+		drop table #Inpbuffer
+
+	CREATE TABLE #Inpbuffer(
+	spid int,
+	EventInfo NVARCHAR(MAX) NULL,
+	CompanyName nvarchar(255)
+	)
+
+
+	SET @ExecSql = 'DECLARE @tBuff varchar(max); SET @tBuff = ''''; '
+		SELECT TOP 10
+		  @ExecSql +=  '  INSERT #InpbufTmp EXEC( '' DBCC INPUTBUFFER(' + RTRIM(spid) + ')''); SET @tBuff = (SELECT TOP 1 EventInfo FROM #InpbufTmp); INSERT INTO #Inpbuffer(spid,EventInfo,CompanyName) values (' + RTRIM(spid) + ', @tBuff, dbo.fn_getCompanyName(@tBuff)); DELETE FROM #InpbufTmp; '
+		FROM #spWho 
+		ORDER BY  CPUTime desc,	IOReads DESC
+	PRINT RTRIM(@ExecSql)
+	EXEC(@ExecSql) 
+
+	--------------------------------------------------------------------------------------
+	-- Query 02
+	IF DATEPART(hh, getdate()) = @hrsToDel AND DATEPART(MINUTE, getdate()) < 15	-- top of the hour
+	BEGIN
+		DELETE FROM [dbo].[sp_Who_Monitor2]
+			WHERE DATEDIFF(DAY, StartTime, GETDATE()) >=@dys
+	END
+
+	-- Filter out some internal queries
+	DELETE FROM #spWho
+	WHERE ObjectName IN 
+	('sys.sp_trace_getdata','sys.sp_trace_getdata', 'dbo.sp_ListLongRunningSessions','sys.sp_reset_connection;1', 'dbo.pr_PROC_CompareMiles_on_Dailymiles_and_Events')
+	-- Filter out some internal queries
+	
+	insert into dbo.[sp_Who_Monitor2]
+	(	spid, DBName, Host,[Login],EventInfo,ObjectName,CompanyName,
+			ElapsedMIN, ElapsedMS, CPUTime,IOReads,IOWrites,		
+		LastWaitType,BlkBy,CommandType,StartTime,ClientAddress,[Status]
+	)
+
+	SELECT b.spid, w.DBName, w.Host, w.[Login], b.EventInfo, w.ObjectName, b.CompanyName, cast((w.ElapsedMS/1000)/60 as decimal(12,3)) ElapsedMIN, w.ElapsedMS, w.CPUTime, w.IOReads, w.IOWrites,
+		w.LastWaitType, w.BlkBy, w.CommandType, w.StartTime,  w.ClientAddress, w.[Status]
+		FROM #Inpbuffer b
+	  INNER JOIN #spWho w on b.spid = w.SPID
+	--WHERE b.CompanyName IS NOT NULL
+	ORDER BY  w.CPUTime desc,
+		w.IOReads DESC
+	--------------------------------------------------------------------------------------	
+
+
+-- END Process
+--///////////////////////////////
+
+END TRY
+	BEGIN CATCH
+
+		
+		SELECT RTRIM(@Proc) , ERROR_NUMBER() 'ERROR_NUMBER'
+		, ERROR_SEVERITY() as 'ERROR_SEVERITY'
+		, ERROR_STATE() as 'ERROR_STATE'
+		, ERROR_MESSAGE() as 'ERROR_MESSAGE';
+
+	END CATCH
+
+    SET @dateTimeEnd  = GETDATE();
+
+
+IF @IsDisplay = 1
+BEGIN
+ PRINT ''
+ PRINT 'End Processing ' + CONVERT(VarChar(20), GETDATE(), 109)
+END
+
+SET NOCOUNT OFF
+RETURN]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[@IsDisplay]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#InpbufTmp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[SPID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[CPUTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[IOReads]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[@hrsToDel]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[StartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[@dys]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ObjectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[spid]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[DBName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[Host]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[Login]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[EventInfo]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[ObjectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[ElapsedMIN]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[ElapsedMS]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[CPUTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[IOReads]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[IOWrites]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[LastWaitType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[BlkBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[CommandType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[ClientAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[sp_Who_Monitor2].[Status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer].[spid]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[SPID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[DBName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Host]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Login]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer].[EventInfo]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ObjectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[decimal]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ElapsedMS]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[CPUTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[IOReads]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[IOWrites]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[LastWaitType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[BlkBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[CommandType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[StartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ClientAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Status]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Tools_Sp_Who_Monitor2].[#InpbufTmp]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#InpbufTmp].[EventType]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#InpbufTmp].[Parameters]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#InpbufTmp].[EventInfo]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer].[spid]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer].[EventInfo]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#Inpbuffer].[CompanyName]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="Length" Value="255" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[SPID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ServerName]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Status]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Login]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Host]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[BlkBy]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[DBName]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[CommandType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[SQLStatement]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ObjectName]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ElapsedMS]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[CPUTime]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[IOReads]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[IOWrites]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[LastWaitType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[StartTime]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Protocol]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[transaction_isolation]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ConnectionWrites]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ConnectionReads]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[ClientAddress]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who_Monitor2].[#spWho].[Authentication]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Tools_Sp_Who_Monitor2].[@dys]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[7]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Tools_Sp_Who_Monitor2].[@hrsToDel]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[8]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Tools_Sp_Who_Monitor2].[@IsDisplay]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[1]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="222" />
+				<Property Name="Length" Value="6165" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/*&#xD;&#xA; Author: Billie D. Lepasana&#xD;&#xA; Date Created:  Oct 7, 2011 @ 10am EST&#xD;&#xA; SQL Server Version:  2008&#xD;&#xA; Description:&#xD;&#xA;    Customized sp_who, with CompanyID &#xD;&#xA;    Utilizing fn_getCompanyName&#xD;&#xA;&#xD;&#xA; Version History:&#xD;&#xA;&#x9;1.0&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;CREATE PROCEDURE [dbo].[Tools_Sp_Who_Monitor2]&#xD;&#xA;--///////////////////////////////&#xD;&#xA;-- Parameters&#xD;&#xA;&#x9;  @dys int = 7&#x9;-- days retention on log table&#xD;&#xA;&#x9; ,@hrsToDel int = 8 -- delete log at this hrs, default to 8am daily&#xD;&#xA;--------------------------------------------&#xD;&#xA;&#x9; ,@IsDisplay&#x9;&#x9;&#x9;&#x9;BIT             = 1&#xD;&#xA;        /* 1 to display feedback msg, 0 not */&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Tools_Sp_Who2]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+SET NOCOUNT ON;
+SET XACT_Abort ON;
+
+IF @IsDisplay = 1
+BEGIN
+ PRINT ''
+ PRINT REPLICATE('=',50)
+ PRINT 'Start Processing ' + CONVERT(VarChar(20), GETDATE(), 109)
+ PRINT REPLICATE('-',25)
+ PRINT 'Server Name : ' + @@ServerName 
+ PRINT 'DB: ' + DB_name()
+ PRINT REPLICATE('-',25)
+ PRINT ''
+END
+
+BEGIN TRY		
+	DECLARE 
+		-----------------------------
+		-- Error Logging
+        @Proc	NVARCHAR(75) = 'Tools_Sp_Who2'
+--///////////////////////////////
+-- Variables
+	   ,@dateTimeEnd DATETIME
+
+--///////////////////////////////
+-- Initialized
+
+
+
+--///////////////////////////////
+-- BEGIN Process
+		if (object_id('tempdb..#spWho') is not null)
+			drop table #spWho
+
+		SELECT 			SPID                = er.session_id  
+			,@@SERVERNAME ServerName
+			,Status             = ses.status  
+			,[Login]            = ses.login_name  
+			,Host               = ses.host_name  
+			,BlkBy              = er.blocking_session_id  
+			,DBName             = DB_Name(er.database_id)  
+			,CommandType        = er.command  
+			,SQLStatement       =  
+				SUBSTRING 
+				(  
+					qt.text,  
+					er.statement_start_offset/2,  
+					(CASE WHEN er.statement_end_offset = -1  
+						THEN LEN(CONVERT(nvarchar(MAX), qt.text)) * 2  
+						ELSE er.statement_end_offset  
+						END - er.statement_start_offset)/2  
+				)  
+			,ObjectName         = OBJECT_SCHEMA_NAME(qt.objectid,dbid) + '.' + OBJECT_NAME(qt.objectid, qt.dbid)  
+			,ElapsedMS          = er.total_elapsed_time  
+			,CPUTime            = er.cpu_time  
+			,IOReads            = er.logical_reads + er.reads  
+			,IOWrites           = er.writes  
+			,LastWaitType       = er.last_wait_type  
+			,StartTime          = er.start_time  
+			,Protocol           = con.net_transport  
+			,transaction_isolation =  
+				CASE ses.transaction_isolation_level  
+					WHEN 0 THEN 'Unspecified' 
+					WHEN 1 THEN 'Read Uncommitted' 
+					WHEN 2 THEN 'Read Committed' 
+					WHEN 3 THEN 'Repeatable' 
+					WHEN 4 THEN 'Serializable' 
+					WHEN 5 THEN 'Snapshot' 
+				END 
+			,ConnectionWrites   = con.num_writes  
+			,ConnectionReads    = con.num_reads  
+			,ClientAddress      = con.client_net_address  
+			,Authentication     = con.auth_scheme  
+		---------------------------
+		INTO #spWho 
+		---------------------------
+			FROM sys.dm_exec_requests er  
+				LEFT JOIN sys.dm_exec_sessions ses  ON ses.session_id = er.session_id  
+				LEFT JOIN sys.dm_exec_connections con  ON con.session_id = ses.session_id  
+				OUTER APPLY sys.dm_exec_sql_text(er.sql_handle) as qt  
+
+		WHERE ses.status   = 'running'
+			ORDER BY 
+			CPUTime desc,
+			IOReads DESC
+
+	--------------------------------------------------------------------------------------
+	-- Query 01
+	--SELECT *  FROM #spWho 
+	--	ORDER BY ElapsedMS desc
+	--------------------------------------------------------------------------------------
+	DECLARE 
+	     @ExecSql varchar(max)
+   
+	if (object_id('tempdb..#InpbufTmp') is not null)
+		drop table #InpbufTmp
+
+
+	CREATE TABLE #InpbufTmp(
+	EventType NVARCHAR(MAX) NULL,
+	Parameters INT NULL,
+	EventInfo NVARCHAR(MAX) NULL
+	)
+
+	if (object_id('tempdb..#Inpbuffer') is not null)
+		drop table #Inpbuffer
+
+	CREATE TABLE #Inpbuffer(
+	spid int,
+	EventInfo NVARCHAR(MAX) NULL,
+	CompanyName nvarchar(255)
+	)
+
+
+	SET @ExecSql = 'DECLARE @tBuff varchar(max); SET @tBuff = ''''; '
+		SELECT TOP 10
+		  @ExecSql +=  '  INSERT #InpbufTmp EXEC( '' DBCC INPUTBUFFER(' + RTRIM(spid) + ')''); SET @tBuff = (SELECT TOP 1 EventInfo FROM #InpbufTmp); INSERT INTO #Inpbuffer(spid,EventInfo,CompanyName) values (' + RTRIM(spid) + ', @tBuff, dbo.fn_getCompanyName(@tBuff)); DELETE FROM #InpbufTmp; '
+		FROM #spWho 
+		ORDER BY  CPUTime desc,	IOReads DESC
+	PRINT RTRIM(@ExecSql)
+	EXEC(@ExecSql) 
+
+	--------------------------------------------------------------------------------------
+	-- Query 02
+	SELECT b.spid, w.DBName, w.Host, w.[Login], b.EventInfo, w.ObjectName, b.CompanyName, cast((w.ElapsedMS/1000)/60 as decimal(12,3)) ElapsedMIN, w.ElapsedMS, w.CPUTime, w.IOReads, w.IOWrites,
+		w.LastWaitType, w.BlkBy, w.CommandType, w.StartTime,  w.ClientAddress, w.[Status]
+		FROM #Inpbuffer b
+
+	  INNER JOIN #spWho w on b.spid = w.SPID
+	ORDER BY  w.CPUTime desc,
+		w.IOReads DESC
+	--------------------------------------------------------------------------------------	
+
+
+-- END Process
+--///////////////////////////////
+
+END TRY
+	BEGIN CATCH
+
+		
+		SELECT RTRIM(@Proc) , ERROR_NUMBER() 'ERROR_NUMBER'
+		, ERROR_SEVERITY() as 'ERROR_SEVERITY'
+		, ERROR_STATE() as 'ERROR_STATE'
+		, ERROR_MESSAGE() as 'ERROR_MESSAGE';
+
+	END CATCH
+
+    SET @dateTimeEnd  = GETDATE();
+
+
+IF @IsDisplay = 1
+BEGIN
+ PRINT ''
+ PRINT 'End Processing ' + CONVERT(VarChar(20), GETDATE(), 109)
+END
+
+SET NOCOUNT OFF
+RETURN]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[@IsDisplay]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#InpbufTmp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[SPID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[CPUTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[IOReads]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer].[spid]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[SPID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[DBName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[Host]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[Login]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer].[EventInfo]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[ObjectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer].[CompanyName]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[decimal]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[ElapsedMS]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[CPUTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[IOReads]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[IOWrites]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[LastWaitType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[BlkBy]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[CommandType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[StartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[ClientAddress]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_Sp_Who2].[#spWho].[Status]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Tools_Sp_Who2].[#InpbufTmp]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who2].[#InpbufTmp].[EventType]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who2].[#InpbufTmp].[Parameters]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who2].[#InpbufTmp].[EventInfo]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer].[spid]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer].[EventInfo]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="IsMax" Value="True" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlSimpleColumn" Name="[dbo].[Tools_Sp_Who2].[#Inpbuffer].[CompanyName]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="SqlTypeSpecifier">
+												<Property Name="Length" Value="255" />
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[Tools_Sp_Who2].[#spWho]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[SPID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[ServerName]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[Status]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[Login]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[Host]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[BlkBy]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[DBName]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[CommandType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[SQLStatement]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[ObjectName]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[ElapsedMS]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[CPUTime]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[IOReads]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[IOWrites]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[LastWaitType]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[StartTime]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[Protocol]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[transaction_isolation]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[ConnectionWrites]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[ConnectionReads]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[ClientAddress]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[Tools_Sp_Who2].[#spWho].[Authentication]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Tools_Sp_Who2].[@IsDisplay]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[1]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="254" />
+				<Property Name="Length" Value="5317" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/*&#xD;&#xA; Author: Billie D. Lepasana&#xD;&#xA; Date Created:  Oct 7, 2011 @ 10am EST&#xD;&#xA; SQL Server Version:  2008&#xD;&#xA; Description:&#xD;&#xA;    Customized sp_who, with CompanyID on pr_CGui_RPT_EventDetailDriver&#xD;&#xA;    Utilizing fn_getCompanyName&#xD;&#xA;&#xD;&#xA; Version History:&#xD;&#xA;&#x9;1.0&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;CREATE PROCEDURE [dbo].[Tools_Sp_Who2]&#xD;&#xA;--///////////////////////////////&#xD;&#xA;-- Parameters&#xD;&#xA;&#x9;&#xD;&#xA;--------------------------------------------&#xD;&#xA;&#x9; @IsDisplay&#x9;&#x9;&#x9;&#x9;BIT             = 1&#xD;&#xA;        /* 1 to display feedback msg, 0 not */&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[Tools_WaitingTask2]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+SET NOCOUNT ON;
+SET XACT_Abort ON;
+
+IF @IsDisplay = 1
+BEGIN
+ PRINT ''
+ PRINT REPLICATE('=',50)
+ PRINT 'Start Processing ' + CONVERT(VarChar(20), GETDATE(), 109)
+ PRINT REPLICATE('-',25)
+ PRINT 'Server Name : ' + @@ServerName 
+ PRINT 'DB: ' + DB_name()
+ PRINT REPLICATE('-',25)
+ PRINT ''
+END
+
+BEGIN TRY		
+	DECLARE 
+		-----------------------------
+		-- Error Logging
+        @Proc	NVARCHAR(75) = 'Tools_WaitingTask'
+--///////////////////////////////
+-- Variables
+	   ,@dateTimeEnd DATETIME
+
+--///////////////////////////////
+-- Initialized
+
+
+
+--///////////////////////////////
+-- BEGIN Process
+
+	SELECT 	dm_ws.session_ID,
+	dm_ws.wait_duration_ms,
+	dm_ws.wait_type,
+	dm_es.status,
+	dm_t.TEXT,
+	dm_qp.query_plan,
+	dm_ws.blocking_session_id,
+	dm_ws.blocking_exec_context_id,
+	dm_ws.resource_description,
+	dm_es.cpu_time,
+	dm_es.memory_usage,
+	dm_es.logical_reads,
+	dm_es.total_elapsed_time,
+	dm_es.program_name,
+	DB_NAME(dm_r.database_id) DatabaseName,
+	-- Optional columns
+	dm_ws.blocking_session_id,
+	dm_r.wait_resource,
+	dm_es.login_name,
+	dm_r.command,
+	dm_r.last_wait_type
+	FROM sys.dm_os_waiting_tasks dm_ws
+	INNER JOIN sys.dm_exec_requests dm_r ON dm_ws.session_id = dm_r.session_id
+	INNER JOIN sys.dm_exec_sessions dm_es ON dm_es.session_id = dm_r.session_id
+	CROSS APPLY sys.dm_exec_sql_text (dm_r.sql_handle) dm_t
+	CROSS APPLY sys.dm_exec_query_plan (dm_r.plan_handle) dm_qp
+
+	order by dm_ws.blocking_session_id DESC, dm_ws.wait_duration_ms desc
+
+-- END Process
+--///////////////////////////////
+
+END TRY
+	BEGIN CATCH
+
+		
+		SELECT RTRIM(@Proc) , ERROR_NUMBER() 'ERROR_NUMBER'
+		, ERROR_SEVERITY() as 'ERROR_SEVERITY'
+		, ERROR_STATE() as 'ERROR_STATE'
+		, ERROR_MESSAGE() as 'ERROR_MESSAGE';
+
+	END CATCH
+
+    SET @dateTimeEnd  = GETDATE();
+
+
+IF @IsDisplay = 1
+BEGIN
+ PRINT ''
+ PRINT 'End Processing ' + CONVERT(VarChar(20), GETDATE(), 109)
+END
+
+SET NOCOUNT OFF
+RETURN]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Tools_WaitingTask2].[@IsDisplay]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[Tools_WaitingTask2].[@IsDisplay]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[1]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="248" />
+				<Property Name="Length" Value="2440" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/*&#xD;&#xA; Author: Billie D. Lepasana&#xD;&#xA; Date Created:  Oct 7, 2011 @ 10am EST&#xD;&#xA; SQL Server Version:  2008&#xD;&#xA; Description:&#xD;&#xA;    Look at snapshot of current task running that is waiting&#xD;&#xA;    See if there are blocking issue&#xD;&#xA;&#xD;&#xA; Version History:&#xD;&#xA;&#x9;1.0&#xD;&#xA;&#xD;&#xA;*/&#xD;&#xA;CREATE PROCEDURE [dbo].[Tools_WaitingTask2]&#xD;&#xA;--///////////////////////////////&#xD;&#xA;-- Parameters&#xD;&#xA;&#x9;&#xD;&#xA;--------------------------------------------&#xD;&#xA;&#x9; @IsDisplay&#x9;&#x9;&#x9;&#x9;BIT             = 1&#xD;&#xA;        /* 1 to display feedback msg, 0 not */&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+	</Model>
+</DataSchemaModel>
