@@ -44,6 +44,1166 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[((1))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[db_excluded_index]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[StatusID]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[db_ErrorLog]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[LogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[ObjectName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[sys].[sysname]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[row_cnt]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[SQLCommand]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[ErrorNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[ErrorSeverity]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[ErrorState]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[ErrorMessage]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_ErrorLog].[DateApplied]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_ErrorLog].[db_ErrorLog_idx_1]">
+			<Property Name="IsClustered" Value="True" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_ErrorLog].[LogID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[db_excluded_index]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[LogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[BatchID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[objectName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[indexName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[IsIncluded]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[StatusID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_excluded_index].[Notes]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_excluded_index].[db_excluded_index_idx_1]">
+			<Property Name="IsClustered" Value="True" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_excluded_index].[LogID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_excluded_index]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_excluded_index].[db_excluded_index_idx_2]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_excluded_index].[StatusID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_excluded_index].[BatchID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IncludedColumns">
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[indexName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[objectName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_excluded_index]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[db_indexDefragList]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[LogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[objectID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[indexID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[partitionNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[fragmentation]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Precision" Value="53" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[float]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[page_count]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[defragStatus]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[BatchID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList].[dss_update_date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_indexDefragList].[db_indexDefragList_idx_1]">
+			<Property Name="IsClustered" Value="True" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList].[LogID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_indexDefragList].[db_indexDefragList_idx_2]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList].[objectID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList].[indexID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList].[partitionNumber]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[db_indexDefragList_LogID]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_LogID].[LogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_indexDefragList_LogID].[db_indexDefragList_idx_1_LogID]">
+			<Property Name="IsClustered" Value="True" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_LogID].[LogID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_LogID]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[db_indexDefragList_Monitor]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[LogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[objectID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[indexID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[partitionNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[fragmentation]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Precision" Value="53" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[float]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[page_count]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[defragStatus]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[BatchID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_indexDefragList_Monitor].[dss_update_date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_indexDefragList_Monitor].[db_indexDefragList_Monitor_idx_1]">
+			<Property Name="IsClustered" Value="True" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[LogID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_indexDefragList_Monitor].[db_indexDefragList_Monitor_idx_2]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[objectID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[indexID]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[partitionNumber]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_indexDefragList_Monitor].[NonClusteredIndex-20200501-212343]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[defragStatus]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[fragmentation]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_indexDefragList_Monitor].[page_count]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[db_reindexLog]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[indexDefrag_id]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[LogID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[dss_update_date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[objectID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[objectName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[indexID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[indexName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[partitionNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[fragmentation]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Precision" Value="53" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[float]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[page_count]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[dateTimeStart]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[durationSeconds]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[SQLCommand]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[ReorgTag]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[ErrorNumber]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[ErrorSeverity]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[ErrorState]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[db_reindexLog].[ErrorMessage]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Filegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FilegroupForTextImage">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlIndex" Name="[dbo].[db_reindexLog].[db_reindexLog_idx_1]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[db_reindexLog].[indexDefrag_id]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="IndexedObject">
+				<Entry>
+					<References Name="[dbo].[db_reindexLog]" />
+				</Entry>
+			</Relationship>
+		</Element>
 		<Element Type="SqlDefaultConstraint" Name="[dbo].[DF_sp_Who_Monitor2_IsEmail]">
 			<Property Name="DefaultExpressionScript">
 				<Value><![CDATA[((0))]]></Value>
@@ -141,6 +1301,1554 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Reindex]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+ 
+  SET XACT_ABORT OFF;
+  SET NOCOUNT ON;
+
+  SET deadlock_priority 1;
+
+  --===============================================================
+  -- Control variables used in most programs
+  --===============================================================
+  DECLARE
+    @v_msgtext         varchar(256) -- Text for audit_trail
+  , @v_step            integer      -- return code
+  , @v_update_count    integer      -- no of records updated
+  , @v_insert_count    integer      -- no of records inserted
+  , @v_count           integer      -- General counter
+  , @v_return_status   integer      -- Query result status
+  , @v_row_count       integer      -- Query returned row count
+  , @v_db_code         varchar(10)  -- Database error code
+  , @v_db_msg          varchar(100) -- Database error message
+
+  SET @v_step = 100;
+  SET NOCOUNT ON;
+
+
+DECLARE
+       -- Add the parameters for the stored procedure here
+    /* Declare Parameters */
+      @minFragmentation     FLOAT           = 10.0
+        /* in percent, will not defrag if fragmentation
+           less than specified */
+    , @rebuildThreshold     FLOAT           = 30.0
+        /* in percent, greater than @rebuildThreshold
+           will result in rebuild instead of reorg */
+    , @rebuildThresholdCritical     FLOAT  = 70.0
+        /* rebuild, it's critical */
+    , @onlineRebuild        BIT             = 0
+        /* 1 = online rebuild; 0 = offline rebuild */
+    , @executeSQL           BIT             = 1
+        /* 1 = execute; 0 = print command only */
+    , @tableName            VARCHAR(4000)   = Null
+        /* Option to specify a table name */
+    , @printCommands        BIT             = 0
+        /* 1 = print commands; 0 = do not print commands */
+    , @printFragmentation   BIT             = 0
+        /* 1 = print fragmentation prior to defrag;
+           0 = do not print */
+    , @defragDelay          CHAR(12)         = '00:00:00:003'
+        /* time to wait between defrag commands */
+    , @IsReindex                  BIT             = 1
+        /* 1 = reindex; 0 = no Reindexing */
+    , @IsLogExecution             BIT             = 1
+        /* 1 = Log Execution to ReindexLog; 0 = no Logging */
+    , @IsUpdateStats       BIT             = 1
+        /* 1 = UpdateStats; 0 = No Update Stats */
+    , @IsDisplay bit=1    -- 1 to display, 0 not
+	, @MaxExecutionTime int = 18000
+		/* seconds for max execution, 10800 sec = 3 hrs or 18000 secs =  5 hrs from 2 am till 7 am */
+    , @IsClearExecutionLog bit=1 -- 0 if you dont want to clear ExecutionLog
+	, @LogRetentionDays as int = 30 -- days for log retention
+	, @p_batch_id         int = 1 -- [dbo].[db_excluded_index], default to ALL, without FILTER
+
+
+  DECLARE
+  	@paramName VARCHAR(64) = 'DB_Reindex_ExecutionTime',
+	@paramComment VARCHAR(2000) = 'Number of seconds for reindexing to run before it Exit.',
+	@paramValue VARCHAR(2000),
+	@onlineRebuildVar bit,
+	@dbmaxrun int,
+	@batch_id as int = @p_batch_id,
+	@dtMinExecutionLog as datetime = DATEADD(YEAR,-1,getdate())  -- default to 1 year
+	;
+
+  -- max run, starts at 2 am until 
+	SET @dbmaxrun = 5
+ -- no limit
+ -- else
+	--SET @dbmaxrun = 0
+ -- ;
+  -- online rebuild, its Standard, its not supported
+	--SET @onlineRebuildVar = 1
+ -- else
+	SET @onlineRebuildVar = 0
+  --;
+
+
+--  set @MaxExecutionTime  = @dbmaxrun;
+--  set @onlineRebuild = @onlineRebuildVar;
+
+
+if @IsDisplay = 1 OR @printCommands = 1
+  begin
+       SET @printCommands = 1;
+       SET @IsDisplay = 1;
+  end
+
+IF @IsDisplay = 1
+BEGIN
+	PRINT ''
+	PRINT REPLICATE('=',50)
+	PRINT 'Reindex and Update Stats'
+	PRINT 'Start Processing '  + CONVERT(VARCHAR, GETDATE(), 121)
+	PRINT REPLICATE('-',25)
+	PRINT 'Server Name : ' + @@ServerName
+	PRINT 'DB: ' + DB_name()
+	PRINT REPLICATE('-',25)
+	PRINT ''
+END
+
+       DECLARE
+              -----------------------------
+              -- Error Logging
+                @ErrorNumber             INT
+              , @ErrorSeverity     INT
+              , @ErrorState        INT
+              , @Switch                  BIT
+              , @ErrorMessage            NVARCHAR(4000)
+
+--///////////////////////////////
+-- Variables
+            , @objectID         INT
+            , @indexID          INT
+            , @LogID            BIGINT
+            , @dss_update_date  DATETIME
+            , @partitionCount   BIGINT
+            , @schemaName       NVARCHAR(130)
+            , @objectName       NVARCHAR(130)
+            , @indexName        NVARCHAR(130)
+            , @partitionNumber  SMALLINT
+            , @partitions       SMALLINT
+            , @fragmentation    FLOAT
+            , @pageCount        INT
+            , @sqlCommand       NVARCHAR(4000)
+            , @rebuildCommand   NVARCHAR(200)
+            , @dateTimeStart    DATETIME
+            , @dateTimeEnd      DATETIME
+            , @containsLOB      BIT
+            , @RwCnt  int
+			, @ServerStartTime  datetime = CURRENT_TIMESTAMP
+			, @ServerEndTime  datetime = CURRENT_TIMESTAMP
+			, @MaxExecutionTimeAllowed int = 10800		-- seconds, 3 hours
+
+--///////////////////////////////
+-- Others
+            , @ReorgTag        NVARCHAR(130) = ''
+
+;
+
+-- Determine Product Version
+DECLARE @ProdVersion as int, @ProdVersionTxt as nvarchar(10)
+SELECT @ProdVersionTxt = CAST(SERVERPROPERTY('ProductVersion') AS nvarchar(10))
+SELECT @ProdVersion = CAST(SUBSTRING(@ProdVersionTxt, 1,CHARINDEX('.',@ProdVersionTxt,1)-1) as int)
+-- 9 - sql 2005, 10 - sql 2008, 11 - sql 2012, 12 - sql 2014, 13 - sql 2016
+--14 - sql 2017, 15 - sql 2019
+
+
+
+SET @v_step = 200;
+--///////////////////////////////
+-- Initialized
+--///////////////////////////////
+-- BEGIN
+       -- make sure tempdb table doesn't exists
+ --      if (object_id('tempdb..#indexDefragList') is not null)
+ --                          drop table #indexDefragList
+
+    /* Just a little validation... */
+    IF @minFragmentation Not Between 0.00 And 100.0
+        SET @minFragmentation = 10.0;
+
+    IF @rebuildThreshold Not Between 0.00 And 100.0
+        SET @rebuildThreshold = 30.0;
+
+    IF @defragDelay Not Like '00:[0-5][0-9]:[0-5][0-9]'
+        SET @defragDelay = '00:00:00:100';
+
+    /* Determine which indexes to defrag using our
+       user-defined parameters */
+
+SET @v_step = 300;
+
+       IF OBJECT_ID('tempdb..#indexDefragList') IS NOT NULL
+        DROP TABLE #indexDefragList
+
+       IF OBJECT_ID('tempdb..#indexDefragListIncluded') IS NOT NULL
+        DROP TABLE #indexDefragListIncluded
+
+
+	SELECT
+	  OBJECT_ID AS objectID
+	  , index_id AS indexID
+	  , partition_number AS partitionNumber
+	  , avg_fragmentation_in_percent AS fragmentation
+	  , page_count
+	  , 0 AS defragStatus
+				/* 0 = unprocessed, 1 = processed */
+	INTO #indexDefragList 
+	  FROM sys.dm_db_index_physical_stats  
+		(DB_ID(), OBJECT_ID(@tableName), NULL , NULL, N'Limited')
+	WHERE avg_fragmentation_in_percent > @minFragmentation
+		And index_id > 0
+	OPTION (MaxDop 1);
+
+       -- create #indexDefragListIncluded
+       SELECT *
+       INTO #indexDefragListIncluded
+        FROM #indexDefragList
+       WHERE 1=2
+
+      -- EXCLUDE, always
+      DELETE FROM #indexDefragList WHERE [objectID] in (SELECT OBJECT_ID from sys.objects WHERE name like 'partition_fn%')
+
+      -- db_excluded_index BEGIN ----------------------------------------------------------
+      -- 'ALL' means all database indexes ---
+      IF NOT EXISTS(SELECT TOP 1 1 FROM db_excluded_index WHERE BatchID = @batch_id AND objectName='ALL' AND StatusID = 1)
+      BEGIN
+        -- IsIncluded=1, WHERE indexName is NOT null
+        INSERT INTO [dbo].[#indexDefragListIncluded]
+      	 ([objectID],[indexID],[partitionNumber],[fragmentation],[page_count],[defragStatus])
+      	 SELECT t.objectID, t.indexID, t.partitionNumber, t.fragmentation, t.page_count, t.[defragStatus]
+                  FROM sys.indexes i
+                    INNER JOIN db_excluded_index l
+                		ON i.object_id = OBJECT_ID(l.objectName) AND i.name = l.indexName
+                	INNER JOIN #indexDefragList t ON i.object_id = t.objectID AND i.index_id = t.indexID
+                WHERE l.BatchID = @batch_id AND l.IsIncluded=1 AND l.indexName is NOT null AND l.StatusID = 1
+
+       END
+      -- db_excluded_index END ----------------------------------------------------------
+
+
+      -- Check existing snapshot BEGIN --------------------------------------------------
+	  if NOT EXISTS(SELECT TOP 1 1 FROM [dbo].[db_indexDefragList] WHERE BatchID = @batch_id and defragStatus = 0)
+	  BEGIN
+            -- clear any remnants of previous ran on the batch, when all defragStatus = 1
+            DELETE FROM [dbo].[db_indexDefragList] WHERE BatchID = @batch_id
+       END
+         ELSE
+           BEGIN
+             -- @rebuildThresholdCritical, always insert in every cycle
+             DELETE FROM #indexDefragList WHERE fragmentation < @rebuildThresholdCritical
+             DELETE FROM #indexDefragListIncluded WHERE fragmentation < @rebuildThresholdCritical
+           END
+      -- Check existing snapshot END --------------------------------------------------
+
+      -- insert into defrag list --BEGIN -- Included
+  	  INSERT INTO [dbo].[db_indexDefragList]
+	  ([objectID],[indexID],[partitionNumber],[fragmentation],[page_count],[defragStatus],BatchID, dss_update_date)
+		SELECT objectID, indexID, partitionNumber, fragmentation, page_count, defragStatus, @batch_id, getdate()
+	          FROM #indexDefragListIncluded
+
+       -- insert the rest
+  	  INSERT INTO [dbo].[db_indexDefragList]
+	  ([objectID],[indexID],[partitionNumber],[fragmentation],[page_count],[defragStatus],BatchID, dss_update_date)
+		SELECT objectID, indexID, partitionNumber, fragmentation, page_count, defragStatus, @batch_id, getdate()
+	          FROM #indexDefragList
+      -- insert into defrag list -- END
+
+         -- Remove Duplicates
+         DELETE FROM [dbo].[db_indexDefragList] WHERE [BatchID] = @batch_id
+         AND LogID IN
+  	    (SELECT MIN([LogID])
+	      FROM [dbo].[db_indexDefragList]
+	      WHERE [BatchID] = @batch_id
+	      GROUP BY  [objectID],[indexID],[partitionNumber]
+	      HAVING Count(*) > 1
+	      )
+
+
+    -- Skip object no longer exists, or deleted, in existing lists
+    UPDATE l SET defragStatus = 9
+      FROM [db_indexDefragList] l
+	  left outer join sys.indexes i on
+         i.OBJECT_ID = l.objectID and i.index_id = l.indexID
+      WHERE i.index_id is null
+
+    /* Create a clustered index to boost performance a little */
+--    CREATE CLUSTERED INDEX CIX_temp_indexDefragList
+--        ON #indexDefragList(objectID, indexID, partitionNumber);
+
+
+--- for test only, 2 index only -- ******************************
+DECLARE @TestBit as tinyint = 0
+--SET @TestBit = 0
+IF @TestBit = 1
+BEGIN
+	IF OBJECT_ID('tempdb..#indexTempRun') IS NOT NULL
+	DROP TABLE #indexTempRun
+
+	SELECT TOP 2 * INTO #indexTempRun from [dbo].[db_indexDefragList]
+
+	delete from [dbo].[db_indexDefragList]
+
+     -- insert the rest
+  	  INSERT INTO [dbo].[db_indexDefragList]
+	  ([objectID],[indexID],[partitionNumber],[fragmentation],[page_count],[defragStatus],BatchID, dss_update_date)
+		SELECT objectID, indexID, partitionNumber, fragmentation, page_count, defragStatus, @batch_id, getdate()
+	          FROM #indexTempRun
+END
+--- for test only, 2 index only-- ******************************
+TRUNCATE TABLE db_indexDefragList_LogID;			
+TRUNCATE TABLE db_indexDefragList_Monitor;
+
+INSERT INTO [dbo].[db_indexDefragList_Monitor]
+           ([LogID],[objectID],[indexID]
+           ,[partitionNumber],[fragmentation]
+           ,[page_count],[defragStatus]
+           ,[BatchID],[dss_update_date])
+
+	SELECT [LogID],[objectID],[indexID]
+			   ,[partitionNumber],[fragmentation]
+			   ,[page_count],[defragStatus]
+			   ,[BatchID],[dss_update_date]
+	FROM [dbo].[db_indexDefragList];
+
+INSERT INTO [dbo].[db_indexDefragList_LogID] ([LogID])
+	SELECT [LogID] FROM [dbo].[db_indexDefragList] WHERE [defragStatus]=1 ;
+
+
+
+SET @v_step = 400;
+------------------------------------------- ///////////////////////////////////////////
+/* Begin our loop for defragging */
+WHILE EXISTS (SELECT TOP 1 1 FROM [dbo].[db_indexDefragList]
+        WHERE defragStatus = 0 and BatchID = @batch_id
+)
+BEGIN
+        -- reset Error Log
+        SELECT @ErrorNumber=NULL
+            , @ErrorSeverity=NULL
+            , @ErrorState=NULL
+            , @ErrorMessage=NULL;
+
+		-- initialize reorg tag
+		SET @ReorgTag = NULL;
+
+        /* Grab the most fragmented index first to defrag */
+        SELECT TOP 1
+              @objectID         = objectID
+			, @LogID			= LogID
+			, @dss_update_date	= dss_update_date
+            , @fragmentation    = fragmentation
+            , @indexID          = indexID
+            , @partitionNumber  = partitionNumber
+            , @pageCount        = page_count
+        FROM [dbo].[db_indexDefragList]
+        WHERE defragStatus = 0
+        AND BatchID = @batch_id
+        ORDER BY ROUND(fragmentation,2) DESC, page_count DESC;
+
+        /* Look up index information */
+        SELECT @objectName = QUOTENAME(o.name)
+             , @schemaName = QUOTENAME(s.name)
+        FROM sys.objects AS o
+        INNER Join sys.schemas AS s
+            ON s.schema_id = o.schema_id
+        WHERE o.OBJECT_ID = @objectID;
+
+        SELECT @indexName = QUOTENAME(name)
+        FROM sys.indexes
+        WHERE OBJECT_ID = @objectID
+            And index_id = @indexID
+            And type > 0;
+
+        /* Determine if the index is partitioned */
+        SET @partitionCount = 1
+        SELECT @partitionCount = COUNT(*)
+        FROM sys.partitions
+        WHERE OBJECT_ID = @objectID
+            And index_id = @indexID;
+
+        /* Look for LOBs */
+        SET @containsLOB = 0
+        SELECT TOP 1
+            @containsLOB = column_id
+        FROM sys.columns WITH (NOLOCK)
+        WHERE
+            [OBJECT_ID] = @objectID
+            And (system_type_id In (34, 35, 99));
+            -- 34 = image, 35 = text, 99 = ntext
+            -- Or max_length = -1);  -- This is supported in SQL Server 2012
+            -- varbinary(max), varchar(max), nvarchar(max), xml
+
+       -------------------------------------------------------------------
+       -- Determine which command to execute -- BEGIN
+       SET @Switch = 0 -- @rebuildThresholdCritical - PARTITION=ALL
+       SET @rebuildCommand = ' '
+
+       if @ProdVersion < 9  -- Rebuild ONLINE is introduced in SQL Server 2005
+         SET @onlineRebuild = 0
+       -- 9 - sql 2005, 10 - sql 2008, 11 - sql 2012, 12 - sql 2014, 13 - sql 2016
+
+        /* If our index is partitioned
+          * SQL Server 2008 and prior do not support REBUILD individual partition,
+            it requires ALL, meaning entire index, and the table is not available
+          * SQL Server 2012 support REBUILD each partition but do not support ONLINE,
+            so the partition is still lock
+          * SQL Server 2014 and beyond, support REBUILD ONLINE, each individual partition
+        */
+        SET @sqlCommand = N'Alter Index ' + @indexName + N' On ' + @schemaName + N'.' + @objectName
+        IF @partitionCount > 1
+        BEGIN
+              -- @rebuildThresholdCritical
+              IF @fragmentation >= @rebuildThreshold
+              BEGIN
+                IF @onlineRebuild = 1 AND @ProdVersion = 11 -- SQL Server 2012 dont support ONLINE REBUILD single partition, always offline
+                  SET @rebuildCommand = N' REBUILD Partition = ' + CAST(@partitionNumber AS NVARCHAR(10)) + N' With (MaxDop = 1)'
+                ELSE
+                  IF @onlineRebuild = 1 AND @ProdVersion > 11  -- SQL Server 2014 and beyond support ONLINE REBUILD single partition
+                    SET @rebuildCommand = N' REBUILD Partition = ' + CAST(@partitionNumber AS NVARCHAR(10)) + N' With (Online = On, MaxDop = 1)'
+                ELSE -- offline, non-enterprise
+                  SET @rebuildCommand = N' REBUILD Partition = ' + CAST(@partitionNumber AS NVARCHAR(10)) + N' With (MaxDop = 1)'
+              END
+               ELSE
+			     BEGIN
+					SET @rebuildCommand = N' reorganize Partition = ' + CAST(@partitionNumber AS NVARCHAR(10))
+					SET @ReorgTag  = ISNULL(@ReorgTag,'') + ' --1'
+				 END
+                -- no MaxDop needed, Reorganized is single threaded operation
+
+              -- Override, SQL 2008 prior don't support REBUILD single partition, only reorg
+              IF @ProdVersion <=  10
+              BEGIN
+                -- always reorg
+                SET @rebuildCommand = ' reorganize ' 
+				SET @ReorgTag  = ISNULL(@ReorgTag,'') + ' --2'
+                -- REBUILD ALL, if @rebuildThresholdCritical, expensive ran
+                IF @fragmentation >= @rebuildThresholdCritical
+                BEGIN
+                   SET @rebuildCommand = ' REBUILD '
+                 END
+              END
+
+        END
+         ELSE -- If our index is NOT partitioned
+          BEGIN
+              /* We should always rebuild online if possible (SQL 2005 Enterprise ONLY) */
+              IF @fragmentation >= @rebuildThreshold
+              BEGIN
+                IF @onlineRebuild = 1
+                  SET @rebuildCommand = N' REBUILD With (Online = On, MaxDop = 1)'
+                ELSE -- offline, non-enterprise
+                  SET @rebuildCommand = N' REBUILD With (MaxDop = 1)'
+              END
+               ELSE
+			     BEGIN
+					 SET @rebuildCommand = ' reorganize ' 
+					 SET @ReorgTag  = ISNULL(@ReorgTag,'') + ' --3'
+				  END
+                -- no MaxDop needed, Reorganized is single threaded operation
+
+          END;
+
+        SET @sqlCommand = @sqlCommand + @rebuildCommand ;
+
+
+        /* Override - Cannot rebuild if the table has one or more LOB, we should always reorganize */
+        IF IsNull(@containsLOB, 0) > 0
+        BEGIN
+		   SET @ReorgTag  = ISNULL(@ReorgTag,'') + ' --4'	
+           SET @sqlCommand = N'Alter Index ' + @indexName + N' On ' + @schemaName + N'.' + @objectName + N' ReOrganize ';
+		   
+           -- no MaxDop needed, Reorganized is single threaded operation
+        END
+
+       -- Determine which command to execute -- END
+       -------------------------------------------------------------------
+
+
+        /* Are we executing the SQL?  If so, do it */
+        IF @executeSQL = 1 AND @IsReindex = 1
+        BEGIN
+                     SELECT @ErrorNumber=null
+                     , @ErrorSeverity=null
+                     , @ErrorState=null
+                     , @ErrorMessage=null;
+
+            /* Grab the time for logging purposes */
+            SET @dateTimeStart  = CURRENT_TIMESTAMP;
+
+                     BEGIN TRY
+                          EXECUTE (@sqlCommand);
+                     END TRY
+                           BEGIN CATCH
+                                  SELECT @ErrorNumber=ERROR_NUMBER()
+                                  , @ErrorSeverity=ERROR_SEVERITY()
+                                  , @ErrorState=ERROR_STATE()
+                                  , @ErrorMessage=ERROR_MESSAGE();
+
+                                  INSERT INTO [dbo].[db_ErrorLog]
+                                     ([ObjectName] ,[ErrorNumber],[ErrorSeverity],
+                                         [ErrorState],[ErrorMessage],[DateApplied], SQLCommand)
+
+                                  SELECT @objectName,
+                                         @ErrorNumber,
+                                         @ErrorSeverity,
+                                         @ErrorState,
+                                         @ErrorMessage, getdate(), @sqlCommand
+                           END CATCH
+
+            SET @dateTimeEnd  = CURRENT_TIMESTAMP;
+
+            /* Log our actions */
+                     IF @IsLogExecution = 1
+                     BEGIN
+                           INSERT INTO [dbo].[db_reindexLog]
+                           (
+                                    objectID
+                                  , objectName
+                                  , indexID
+                                  , indexName
+                                  , partitionNumber
+                                  , fragmentation
+                                  , page_count
+                                  , dateTimeStart
+                                  , durationSeconds
+                                  ,[ErrorNumber],[ErrorSeverity],[ErrorState],[ErrorMessage],SQLCommand, ReorgTag, LogID, dss_update_date
+                           )
+                           SELECT
+                                    @objectID
+                                  , @objectName
+                                  , @indexID
+                                  , @indexName
+                                  , @partitionNumber
+                                  , @fragmentation
+                                  , @pageCount
+                                  , @dateTimeStart
+                                  , DATEDIFF(SECOND, @dateTimeStart, @dateTimeEnd)
+                                  , @ErrorNumber,@ErrorSeverity,@ErrorState,@ErrorMessage, @sqlCommand, @ReorgTag,@LogID, @dss_update_date;
+                     END
+            /* Just a little breather for the server */
+            WAITFOR Delay @defragDelay;
+
+            /* Print if specified to do so */
+            IF @printCommands = 1
+                PRINT CONVERT(VARCHAR, GETDATE(), 121) + ' : ' + N'Executed: ' + @sqlCommand +RTRIM(@ReorgTag);
+		END
+        ELSE
+        /* Looks like we're not executing, just print
+            the commands */
+        BEGIN
+            IF @printCommands = 1
+                PRINT CONVERT(VARCHAR, GETDATE(), 121) + ' : ' + N'NOT Executed: ' + @sqlCommand +RTRIM(@ReorgTag);
+        END
+
+
+       -- for small table, even rebuild doesnt defrag, reoganize fixes the fragmentation
+       IF EXISTS(SELECT top 1 1  FROM sys.dm_db_index_physical_stats(db_id(),@objectID, @indexID, @partitionNumber, NULL) where avg_fragmentation_in_percent >= @fragmentation)
+        BEGIN
+             IF @partitionCount > 1
+               SET @sqlCommand = N'Alter Index ' + @indexName + N' On ' + @schemaName + N'.' + @objectName + N' reorganize Partition = ' + CAST(@partitionNumber AS NVARCHAR(10))
+             ELSE
+                SET @sqlCommand = N'Alter Index ' + @indexName + N' On ' + @schemaName + N'.' + @objectName + N' reorganize '
+
+			 SET @ReorgTag  = @ReorgTag + ' --5'
+			 SET @sqlCommand =@sqlCommand
+
+			IF @executeSQL = 1 AND @IsReindex = 1
+			BEGIN
+				 BEGIN TRY
+					EXECUTE (@sqlCommand);
+				 END TRY
+				 BEGIN CATCH
+						SELECT @ErrorNumber=ERROR_NUMBER()
+						, @ErrorSeverity=ERROR_SEVERITY()
+						, @ErrorState=ERROR_STATE()
+						, @ErrorMessage=ERROR_MESSAGE();
+
+						INSERT INTO [dbo].[db_ErrorLog]
+						   ([ObjectName] ,[ErrorNumber],[ErrorSeverity],
+							   [ErrorState],[ErrorMessage],[DateApplied], SQLCommand)
+
+						SELECT @objectName,
+							   @ErrorNumber,
+							   @ErrorSeverity,
+							   @ErrorState,
+							   @ErrorMessage, getdate(), @sqlCommand
+				   END CATCH
+
+            /* Log our actions */
+                     IF @IsLogExecution = 1
+                     BEGIN
+                           INSERT INTO [dbo].[db_reindexLog]
+                           (
+                                    objectID
+                                  , objectName
+                                  , indexID
+                                  , indexName
+                                  , partitionNumber
+                                  , fragmentation
+                                  , page_count
+                                  , dateTimeStart
+                                  , durationSeconds
+                                  ,[ErrorNumber],[ErrorSeverity],[ErrorState],[ErrorMessage],SQLCommand, ReorgTag,LogID, dss_update_date
+                           )
+                           SELECT
+                                    @objectID
+                                  , @objectName
+                                  , @indexID
+                                  , @indexName
+                                  , @partitionNumber
+                                  , @fragmentation
+                                  , @pageCount
+                                  , @dateTimeStart
+                                  , DATEDIFF(SECOND, @dateTimeStart, @dateTimeEnd)
+                                  , @ErrorNumber,@ErrorSeverity,@ErrorState,@ErrorMessage, @sqlCommand,@ReorgTag,@LogID, @dss_update_date;
+                     END
+				/* Just a little breather for the server */
+				WAITFOR Delay @defragDelay;
+				/* Print if specified to do so */
+				IF @printCommands = 1
+					PRINT CONVERT(VARCHAR, GETDATE(), 121) + ' : ' + N'Executed: ' + @sqlCommand +RTRIM(@ReorgTag);
+			END
+				ELSE
+				/* Looks like we're not executing, just print
+					the commands */
+				BEGIN
+					IF @printCommands = 1
+						PRINT CONVERT(VARCHAR, GETDATE(), 121) + ' : ' +  N'NOT Executed: ' + @sqlCommand +RTRIM(@ReorgTag);
+				END
+         END
+        -- for small table, even rebuild doesnt defrag, reoganize fixes the fragmentation
+
+        /* Update our index defrag list when we've
+            finished with that index */
+			UPDATE [dbo].[db_indexDefragList]
+			SET defragStatus = 1
+			WHERE LogID = @LogID;
+
+			WAITFOR Delay @defragDelay
+
+			INSERT INTO [dbo].[db_indexDefragList_LogID](LogID) VALUES(@LogID)		
+        --WHERE objectID         = @objectID
+        --  And indexID          = @indexID
+        --  And partitionNumber  = @partitionNumber
+        --  AND BatchID = @batch_id;
+
+		-- check execution time
+		SET @ServerEndTime  = CURRENT_TIMESTAMP;
+		IF DATEDIFF(SECOND, @ServerStartTime, @ServerEndTime) > @MaxExecutionTime
+		BEGIN
+			BREAK;
+		END
+END
+/* END our loop for defragging */
+------------------------------------------- ///////////////////////////////////////////
+SET @v_step = 500;
+    /* Do we want to output our fragmentation results? */
+    IF @printFragmentation = 1
+        SELECT idl.objectID
+            , o.name AS 'tableName'
+            , idl.indexID
+            , i.name AS 'indexName'
+            , idl.fragmentation
+            , idl.page_count
+        FROM db_indexDefragList AS idl
+        Join sys.objects AS o
+            ON idl.objectID = o.OBJECT_ID
+        Join sys.indexes AS i
+            ON idl.objectID = i.OBJECT_ID
+            And idl.indexID = i.index_id
+         and idl.BatchID = @batch_id   ;
+
+    /* When everything is done, make sure to get rid of
+        our temp table */
+    --DROP TABLE #indexDefragList;
+SET @v_step = 600;
+    IF @executeSQL = 1 AND @IsUpdateStats = 1
+    BEGIN
+              SELECT @ErrorNumber=null
+              , @ErrorSeverity=null
+              , @ErrorState=null
+              , @ErrorMessage=null;
+
+              /* Grab the time for logging purposes */
+              PRINT ''
+              SET @dateTimeStart  = GETDATE();
+              SET @sqlCommand = 'EXEC sp_updatestats'
+              PRINT CONVERT(VARCHAR, GETDATE(), 121) + ' : ' +  'Updating Statistics ' ;
+              BEGIN TRY
+                     /*  sp_updatestats is the best option here.
+                           Especially considering the changes in sp_updatestats in 2005
+                           where it will only update stats that are outdated instead of all of them. */
+                     EXEC sp_updatestats
+              END TRY
+                     BEGIN CATCH
+                           SELECT @ErrorNumber=ERROR_NUMBER()
+                           , @ErrorSeverity=ERROR_SEVERITY()
+                           , @ErrorState=ERROR_STATE()
+                           , @ErrorMessage=ERROR_MESSAGE();
+
+                           INSERT INTO [dbo].[db_ErrorLog]
+                              ([ObjectName] ,[ErrorNumber],[ErrorSeverity],
+                                  [ErrorState],[ErrorMessage],[DateApplied], SQLCommand)
+
+                           SELECT @objectName,
+                                  @ErrorNumber,
+                                  @ErrorSeverity,
+                                  @ErrorState,
+                                  @ErrorMessage, getdate(), @sqlCommand
+                     END CATCH
+
+        SET @dateTimeEnd  = GETDATE();
+
+                     IF @IsLogExecution = 1
+                     BEGIN
+						   SET @ReorgTag=null;
+                           INSERT INTO dbo.db_reindexLog
+                           (
+                                    objectID
+                                  , objectName
+                                  , indexID
+                                  , indexName
+                                  , partitionNumber
+                                  , fragmentation
+                                  , page_count
+                                  , dateTimeStart
+                                  , durationSeconds
+                                  ,[ErrorNumber],[ErrorSeverity],[ErrorState],[ErrorMessage],SQLCommand,ReorgTag,LogID, dss_update_date
+                           )
+                           SELECT
+                                    database_id
+                                  , [name]
+                                  , NULL
+                                  , 'Update stats'
+                                  , NULL
+                                  , NULL
+                                  , NULL
+                                  , @dateTimeStart
+                                  , DATEDIFF(SECOND, @dateTimeStart, @dateTimeEnd)
+                                  ,@ErrorNumber,@ErrorSeverity,@ErrorState,@ErrorMessage, @sqlCommand,@ReorgTag,@LogID, @dss_update_date
+                           from sys.databases WHERE [name] = DB_name();
+                     END
+       END
+
+    -- reinitialized the table for the next run
+	IF NOT EXISTS (SELECT TOP 1 1 FROM [dbo].[db_indexDefragList]
+        WHERE defragStatus = 0 AND BatchID = @batch_id)
+	BEGIN
+		DELETE FROM [dbo].[db_indexDefragList] WHERE BatchID = @batch_id
+	END
+	;
+
+	-- clear execution log
+	IF @IsClearExecutionLog=1 -- 0 if you dont want to clear ExecutionLog
+	begin
+	       SET @LogRetentionDays = @LogRetentionDays * -1 -- days for log retention
+		SET @dtMinExecutionLog = DATEADD(DAY,@LogRetentionDays, @ServerEndTime)
+
+		DELETE FROM [dbo].[db_reindexLog] WHERE dateTimeStart < @dtMinExecutionLog
+		DELETE FROM [dbo].[db_ErrorLog] WHERE DateApplied < @dtMinExecutionLog
+	end
+
+SET @v_step = 700;
+IF @IsDisplay = 1
+BEGIN
+	PRINT ''
+	PRINT 'End Processing ' + CONVERT(VARCHAR, GETDATE(), 121);
+	PRINT REPLICATE('=',50)
+END
+--SET @p_status = 1;
+--SET @p_return_msg = 'SP_Reindex completed.';
+RETURN 0;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[float]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[float]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[float]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bigint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bigint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smallint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smallint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[float]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[bit]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[datetime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[tinyint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[objectID]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_excluded_index]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[BatchID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[objectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[StatusID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[objectID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[defragStatus]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_excluded_index]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[objectName]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[indexName]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[objectID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[defragStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[BatchID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[IsIncluded]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[indexName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_excluded_index].[StatusID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[BatchID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[defragStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[BatchID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[objectID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[defragStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[dss_update_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexDefragList].[defragStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[LogID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[LogID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[objectID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[partitionNumber]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[objectID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun].[objectID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Reindex].[#indexTempRun].[defragStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_LogID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[LogID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[objectID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[defragStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[BatchID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_Monitor].[dss_update_date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList_LogID].[LogID]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[ObjectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[ErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[ErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[ErrorState]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[ErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[DateApplied]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_ErrorLog].[SQLCommand]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[objectID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[objectName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[indexID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[indexName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[partitionNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[page_count]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[dateTimeStart]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[durationSeconds]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[ErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[ErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[ErrorState]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[ErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[SQLCommand]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[ReorgTag]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[LogID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_reindexLog].[dss_update_date]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[objectID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[objectID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[indexID]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[BatchID]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[fragmentation]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[db_indexDefragList].[page_count]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[SP_Reindex].[#indexDefragList]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragList].[objectID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragList].[indexID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragList].[partitionNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragList].[fragmentation]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragList].[page_count]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragList].[defragStatus]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[objectID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[SP_Reindex].[#indexDefragList].[objectID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[indexID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[SP_Reindex].[#indexDefragList].[indexID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[partitionNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[SP_Reindex].[#indexDefragList].[partitionNumber]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[fragmentation]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[SP_Reindex].[#indexDefragList].[fragmentation]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[page_count]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[SP_Reindex].[#indexDefragList].[page_count]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexDefragListIncluded].[defragStatus]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[SP_Reindex].[#indexDefragList].[defragStatus]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[SP_Reindex].[#indexTempRun]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[LogID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[LogID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[objectID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[objectID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[indexID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[indexID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[partitionNumber]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[partitionNumber]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[fragmentation]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[fragmentation]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[page_count]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[page_count]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[defragStatus]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[defragStatus]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[BatchID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[BatchID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[SP_Reindex].[#indexTempRun].[dss_update_date]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[db_indexDefragList].[dss_update_date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="2829" />
+				<Property Name="Length" Value="33955" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/******&#xD;&#xA;Author: Billie Lepasana&#xD;&#xA;Date Created:  May 1, 2020&#xD;&#xA;SQL Server Version:  2016&#xD;&#xA;Description:&#xD;&#xA;Version History:&#xD;&#xA;       1.0&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;******/&#xD;&#xA;/********************************************************************&#xD;&#xA;    Name:       dbo.SP_Reindex&#xD;&#xA;    Purpose:    Defrags all indexes for the current database&#xD;&#xA;    Notes:      This script was designed for SQL Server 2005&#xD;&#xA;                Enterprise Edition.&#xD;&#xA;&#xD;&#xA;                           Monitor transaction log if executing for the first time!&#xD;&#xA;&#xD;&#xA;      @minFragmentation     defaulted to 10%, will not defrag if&#xD;&#xA;                            fragmentation if less than specified.&#xD;&#xA;&#xD;&#xA;      @rebuildThreshold     defaulted to 30% as recommended by&#xD;&#xA;                            Microsoft in BOL;&#xD;&#xA;                            &gt; than 30% will result in rebuild instead&#xD;&#xA;&#xD;&#xA;      @rebuildThresholdCritical     defaulted to 70%&#xD;&#xA;&#xD;&#xA;      @onlineRebuild        1 = online rebuild;&#xD;&#xA;                            0 = offline rebuild&#xD;&#xA;&#xD;&#xA;      BDL: 2017-03-14, winter storm in Toronto&#xD;&#xA;      * SQL Server 2008 and prior do not support REBUILD individual partition,&#xD;&#xA;        it requires ALL, meaning entire index, and the table is not available&#xD;&#xA;      * SQL Server 2012 support REBUILD each partition but do not support ONLINE,&#xD;&#xA;          so the partition is still lock&#xD;&#xA;      * SQL Server 2014 and beyond, support REBUILD ONLINE, each individual partition&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;      @executeSQL           1 = execute the SQL generated by this proc;&#xD;&#xA;                            0 = print command only&#xD;&#xA;&#xD;&#xA;      @tableName            Specify if you only want to defrag indexes&#xD;&#xA;                            for a specific table&#xD;&#xA;&#xD;&#xA;      @printCommands        1 = print commands to screen;&#xD;&#xA;                            0 = do not print commands&#xD;&#xA;&#xD;&#xA;      @printFragmentation   1 = print fragmentation to screen;&#xD;&#xA;                            0 = do not print fragmentation&#xD;&#xA;&#xD;&#xA;      @defragDelay          time to wait between defrag commands;&#xD;&#xA;                            gives the server some time to catch up&#xD;&#xA;&#xD;&#xA;    Called by:  SQL Agent Job or DBA&#xD;&#xA;&#xD;&#xA;    Date        Initials  Description&#xD;&#xA;&#xD;&#xA;********************************************************************&#xD;&#xA;-- schedule execution&#xD;&#xA;    Exec dba.SP_Reindex&#xD;&#xA;          @executeSQL         = 1&#xD;&#xA;        , @printCommands      = 0&#xD;&#xA;        , @minFragmentation   = 0&#xD;&#xA;        , @printFragmentation = 0;&#xD;&#xA;&#xD;&#xA;-- manual execution&#xD;&#xA;    Exec dba.SP_Reindex&#xD;&#xA;          @executeSQL         = 1&#xD;&#xA;        , @printCommands      = 1&#xD;&#xA;        , @minFragmentation   = 0&#xD;&#xA;        , @printFragmentation = 1;&#xD;&#xA;&#xD;&#xA;-- Just to print the command&#xD;&#xA;    Exec dba.SP_Reindex&#xD;&#xA;          @executeSQL         = 0&#xD;&#xA;        , @printCommands      = 1&#xD;&#xA;        , @minFragmentation   = 0&#xD;&#xA;        , @printFragmentation = 1;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;********************************************************************/&#xD;&#xA;CREATE PROCEDURE [dbo].[SP_Reindex]&#xD;&#xA;AS" />
+			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[sp_Who_Monitor2]">
 			<Property Name="IsAnsiNullsOn" Value="True" />

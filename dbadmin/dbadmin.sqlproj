@@ -63,6 +63,16 @@
     <Folder Include="Monitoring\scripts" />
     <Folder Include="Find" />
     <Folder Include="Find\scripts" />
+    <Folder Include="Reindexing" />
+    <Folder Include="Reindexing\tables" />
+    <Folder Include="Reindexing\scripts" />
+    <Folder Include="Reindexing\sp" />
+    <Folder Include="Reindexing\data" />
+    <Folder Include="Tempdb" />
+    <Folder Include="Tempdb\scripts" />
+    <Folder Include="Troubleshoot" />
+    <Folder Include="Troubleshoot\scripts" />
+    <Folder Include="Development" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Monitoring\tables\sp_Who_Monitor2.sql" />
@@ -72,11 +82,35 @@
     <Build Include="Monitoring\function\fn_getCompanyName.sql" />
     <None Include="Monitoring\scripts\Tools_Diagnostic2.sql" />
     <Build Include="Monitoring\sp\Tools_KillConnection.sql" />
+    <Build Include="Reindexing\tables\db_ErrorLog.sql" />
+    <Build Include="Reindexing\tables\db_excluded_index.sql" />
+    <Build Include="Reindexing\tables\db_indexDefragList.sql" />
+    <Build Include="Reindexing\tables\db_indexDefragList_Monitor.sql" />
+    <Build Include="Reindexing\tables\db_reindexLog.sql" />
+    <Build Include="Reindexing\sp\SP_Reindex.sql" />
+    <PostDeploy Include="Reindexing\data\db_excluded_index.sql" />
+    <None Include="Monitoring\scripts\Tools_DBGrowthListViaBackupSet.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Monitoring\scripts\Tools_Diagnostic.sql" />
     <None Include="Monitoring\scripts\Tools_LockPerTable.sql" />
     <None Include="Find\scripts\Find_Table_w_Columns.sql" />
     <None Include="Find\scripts\Find_StoredProcedure_SearchText.sql" />
+    <None Include="Reindexing\scripts\Tools_ReindexLog.sql" />
+    <None Include="Monitoring\scripts\Tools_DBSize_PerDatabase.sql" />
+    <None Include="Monitoring\scripts\Tools_DBSize_PerTable.sql" />
+    <None Include="Monitoring\scripts\Tools_Query_ExecutionCount.sql" />
+    <None Include="Reindexing\scripts\Tools_IndexMissing.sql" />
+    <None Include="Reindexing\scripts\Tools_IndexPartition.sql" />
+    <None Include="Monitoring\scripts\Tools_IOStall.sql" />
+    <None Include="Monitoring\scripts\Tools_IOFileLatency.sql" />
+    <None Include="Tempdb\scripts\Tempdb_move.sql" />
+    <None Include="Monitoring\scripts\Tools_DBCC_ClearCache.sql" />
+    <None Include="Monitoring\scripts\Tools_Query_TopMostExpensive.sql" />
+    <None Include="Reindexing\scripts\Tools_StatisticsUpdate.sql" />
+    <None Include="Troubleshoot\scripts\Tools_EmergencyDB_Fix.sql" />
+    <None Include="Development\SP_Template.sql" />
+    <None Include="Troubleshoot\scripts\Tools_DeadlockTrace.sql" />
+    <None Include="Troubleshoot\scripts\Tools_SQLCheck.sql" />
   </ItemGroup>
 </Project>
