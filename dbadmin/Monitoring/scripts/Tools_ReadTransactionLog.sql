@@ -2,7 +2,8 @@
 DECLARE @trnFile as sysname='c:\tmp\trn2.trn'
 -- ******************************************************* -------------------
 
-SELECT * FROM fn_dump_dblog 
+SELECT [Description] Descriptions,
+ * FROM fn_dump_dblog
 (NULL, NULL, N'DISK', 1, @trnFile,
 DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,
 DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT,
